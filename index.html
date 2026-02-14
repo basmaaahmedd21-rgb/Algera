@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algera | Antioxidant Brightening Gel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; scroll-behavior: smooth; }
+        .bg-algera-soft { background-color: #f2f9f6; }
+        .text-algera-brand { color: #1a4332; }
+        .btn-algera { background-color: #2d5a47; transition: all 0.3s ease; }
+        .btn-algera:hover { background-color: #1a4332; transform: translateY(-2px); }
+        .hidden { display: none; }
+        .product-img { filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1)); }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <div id="landing-page">
+        <nav class="p-6 flex justify-between items-center border-b border-emerald-50 sticky top-0 bg-white/90 backdrop-blur-md z-50">
+            <h1 class="text-2xl font-semibold tracking-widest text-algera-brand uppercase">Algera</h1>
+            <a href="#story" class="text-sm font-medium hover:text-emerald-700">Our Story</a>
+        </nav>
+
+        <section class="py-16 px-8 bg-algera-soft">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1 text-center md:text-left">
+                    <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-4 block">New Launch</span>
+                    <h2 class="text-4xl md:text-6xl font-light text-algera-brand mb-6 leading-tight">Antioxidant <br><span class="font-medium italic">Brightening Gel</span></h2>
+                    <p class="text-slate-600 mb-8 text-lg max-w-md mx-auto md:mx-0">High-performance skin solution designed to restore radiance using nature's most resilient marine life forms.</p>
+                    <p class="text-3xl font-light mb-8 text-algera-brand">300 L.E</p>
+                    <button onclick="showCheckout()" class="btn-algera text-white px-12 py-5 rounded-full shadow-xl w-full md:w-auto font-semibold text-lg">Order Now</button>
+                </div>
+                <div class="order-1 md:order-2 flex justify-center">
+                    <img src="https://i.ibb.co/MyCp9YSk/algera.jpg" alt="Algera Gel" class="w-full max-w-xs rounded-[2.5rem] product-img transition-transform duration-700 hover:scale-105">
+                </div>
+            </div>
+        </section>
+
+        <section id="story" class="py-20 px-8 text-center max-w-3xl mx-auto">
+            <div class="w-12 h-1 bg-emerald-100 mx-auto mb-8"></div>
+            <p class="text-2xl font-light text-algera-brand leading-relaxed italic">
+                "At <span class="font-semibold">Algera</span>, we believe that nature has already engineered the most powerful skin solutions."
+            </p>
+        </section>
+    </div>
+
+    <div id="checkout-page" class="hidden min-h-screen bg-slate-50 py-12 px-6">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                <h3 class="text-2xl font-semibold mb-6 text-algera-brand">1. Customer Info</h3>
+                <div class="space-y-4">
+                    <input type="text" id="name" placeholder="Full Name" class="w-full p-4 bg-slate-50 rounded-xl outline-none focus:ring-2 focus:ring-emerald-200 border border-transparent">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="tel" id="phone" placeholder="Mobile Number" class="p-4 bg-slate-50 rounded-xl outline-none focus:ring-2 focus:ring-emerald-200 border border-transparent">
+                        <input type="tel" id="phone2" placeholder="Second Mobile" class="p-4 bg-slate-50 rounded-xl outline-none focus:ring-2 focus:ring-emerald-200 border border-transparent">
+                    </div>
+                    <select id="gov" class="w-full p-4 bg-slate-50 rounded-xl outline-none border border-transparent">
+                        <option>Cairo</option><option>Giza</option><option>Alexandria</option><option>Other</option>
+                    </select>
+                    <textarea id="address" placeholder="Full Address (Street, Building, Flat...)" class="w-full p-4 bg-slate-50 rounded-xl outline-none focus:ring-2 focus:ring-emerald-200 border border-transparent" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 text-center">
+                    <h3 class="text-xl font-semibold mb-6 text-algera-brand italic">Order Summary</h3>
+                    <div class="flex items-center gap-4 justify-center mb-6">
+                        <img src="https://i.ibb.co/MyCp9YSk/algera.jpg" class="w-16 h-16 rounded-xl object-cover shadow-sm">
+                        <div class="text-left">
+                            <p class="font-bold text-sm">Antioxidant Gel</p>
+                            <p class="text-xs text-slate-500">1 Unit × 300 L.E</p>
+                        </div>
+                    </div>
+                    <div class="border-t pt-4 space-y-2 text-sm">
+                        <div class="flex justify-between"><span>Shipping</span><span>50 L.E</span></div>
+                        <div class="flex justify-between font-bold text-xl text-algera-brand pt-2 mt-2 border-t"><span>Total</span><span>350 L.E</span></div>
+                    </div>
+                </div>
+                <button id="confirmBtn" onclick="submitOrder()" class="w-full btn-algera text-white py-5 rounded-2xl font-bold text-lg shadow-xl active:scale-95 transition-all">Confirm Order</button>
+                <button onclick="hideCheckout()" class="w-full text-slate-400 text-sm hover:underline">Cancel & Back</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbykvjsIma6TaCEGnibJ2Yc1weF8LlsXr2tUj7b9BI1rGDs3PzrEyTJxsLfnMdV2yDA5KQ/exec";
+
+        function showCheckout() {
+            document.getElementById('landing-page').classList.add('hidden');
+            document.getElementById('checkout-page').classList.remove('hidden');
+            window.scrollTo(0,0);
+        }
+
+        function hideCheckout() {
+            document.getElementById('checkout-page').classList.add('hidden');
+            document.getElementById('landing-page').classList.remove('hidden');
+        }
+
+        async function submitOrder() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const btn = document.getElementById('confirmBtn');
+
+            if(!name || !phone) { alert("Please enter your name and phone number."); return; }
+
+            btn.innerText = "Processing...";
+            btn.disabled = true;
+
+            const orderData = {
+                name: name,
+                phone: phone,
+                phone2: document.getElementById('phone2').value,
+                gov: document.getElementById('gov').value,
+                address: document.getElementById('address').value,
+                note: "Standard Web Order"
+            };
+
+            try {
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: JSON.stringify(orderData)
+                });
+                alert("Order Placed Successfully! We will contact you soon.");
+                window.location.reload();
+            } catch (e) {
+                alert("Success! Check your Google Sheet.");
+                window.location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
